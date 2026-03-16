@@ -10,8 +10,7 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
     // cashout input amount
     const cashoutInputAmount = getInput('cashout-amount')
     // current balance
-    const balanceElement = document.getElementById('current-balance')
-    const balance = balanceElement.innerText;
+    const currentBalance = getBalance()
     // pin validation
     const pin = getInput('cashout-pin')
     if (pin !== '2126') {
@@ -20,7 +19,7 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
     }
 
     // balance calculator
-    const newBalance = Number(balance) - Number(cashoutInputAmount)
+    const newBalance = currentBalance - Number(cashoutInputAmount)
    
 
     if (newBalance < 0) {
@@ -28,7 +27,7 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
         return;
     }
 
-    balanceElement.innerText = newBalance;
+    setBalance(newBalance)
     alert("Cashout Successful")
 })
 
