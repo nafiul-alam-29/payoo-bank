@@ -17,3 +17,16 @@ function setBalance(value){
     const balanceElement = document.getElementById('current-balance')
     balanceElement.innerText = value
 }
+
+// for functionality hide options
+function showID(id)
+{
+    const addMoneySection = document.getElementById('add-money')
+    const cashOutSection = document.getElementById('cash-out')
+    // 
+    addMoneySection.classList.add("hidden")
+    cashOutSection.classList.add("hidden")
+
+    const selected = document.getElementById(id)
+    selected.classList.remove('hidden')
+}

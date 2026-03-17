@@ -51,12 +51,12 @@
     <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
     <div class="button grid grid-cols-3 gap-3">
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showID('add-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
             <img src="assets/opt-1.png" alt="">
             <p>Add Money</p>
         </button>
 
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showID('cash-out')"  class="btn flex-col h-full py-4 btn-primary btn-soft">
             <img src="assets/opt-2.png" alt="">
             <p>Cash Out</p>
         </button>
@@ -83,6 +83,39 @@
     </div>
 </section>
 
+<section id="add-money" class="w-11/12 mx-auto py-5">
+    <h2 class="text-xl font-bold"> Add Money</h2>
+    <div class="form pt-10">
+        <div class="card bg-base-100 w-full rounded-2xl "> 
+            <div class="card-body">
+            
+                <fieldset class="fieldset">
+                <label class="label text-neutral font-bold ">Select Bank</label>
+                <select id="add-money-bank" class="select rounded-full w-full bg-base-200">
+                    <option disabled selected>Select A Bank</option>
+                    <option value="DBBL">DBBL</option>
+                    <option value="Brac Bank">Brac Bank</option>
+                    <option value="Ucb">Ucb</option>
+                </select>
+                <br>
+                <label class="label text-neutral font-bold ">Bank 11 digit Account Number</label>
+                <input id="add-money-number" maxlength="11" minlength="11" type="email" class="input w-full rounded-full bg-base-200" placeholder="Enter Your Bank Account Number" />
+                <br>
+
+                <label class="label text-neutral font-bold ">Amount</label>
+                <input id="add-amount" maxlength="11" minlength="11" type="email" class="input w-full rounded-full bg-base-200" placeholder="Amount" />
+                <br>
+
+                <label class="label text-neutral font-bold">4 Digit Pin</label>
+                <input id="add-money-pin" maxlength="4" type="password" class="input rounded-full w-full bg-base-200" placeholder="Enter 4 Digit Pin " />
+                <div><a class="link link-hover  text-blue-500">Forgot Pin?</a></div>
+                <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">Add Money</button>
+                </fieldset>
+            </div>
+         </div>
+    </div>
+</section>
+
 <section id="cash-out" class="w-11/12 mx-auto py-5">
     <h2 class="text-xl font-bold"> Cash Out</h2>
     <div class="form pt-10">
@@ -99,7 +132,7 @@
 
                 <label class="label text-neutral font-bold">4 Digit Pin</label>
                 <input id="cashout-pin" maxlength="4" type="password" class="input rounded-full w-full bg-base-200" placeholder="Enter 4 Digit Pin " />
-                <div><a class="link link-hover">Forgot password?</a></div>
+                <div><a class="link link-hover  text-blue-500">Forgot Pin?</a></div>
                 <button id="cashout-btn" class="btn btn-primary mt-4 rounded-full">Withdraw Amount</button>
                 </fieldset>
             </div>
@@ -110,5 +143,6 @@
 
 <script src="cashout.js"></script>
 <script src="machine.js"></script>
+<script src="addmoney.js"></script>
 </body>
 </html>
